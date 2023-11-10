@@ -1,5 +1,6 @@
 package com.example.empi
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -13,8 +14,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout)
         toplayout=findViewById(R.id.toplayout)
+        toplayout.setBackgroundColor(Color.parseColor("#ffffff"))
         var textview = TextView(this)
         textview.text=resources.getText(R.string.greeting)
-        toplayout.addView(textview)
+        //textview.setTextColor(Color.parseColor("#C1D8F0"))
+        //toplayout.addView(textview)
     }
 }
