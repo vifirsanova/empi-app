@@ -1,46 +1,20 @@
 package com.example.empi
 
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.empi.ui.theme.EmpiTheme
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var toplayout : LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            EmpiTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Empi")
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    EmpiTheme {
-        Greeting("Empi")
+        setContentView(R.layout.layout)
+        toplayout=findViewById(R.id.toplayout)
+        var textview = TextView(this)
+        textview.text=resources.getText(R.string.greeting)
+        toplayout.addView(textview)
     }
 }
