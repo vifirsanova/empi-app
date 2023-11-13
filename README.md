@@ -1,4 +1,4 @@
 # empi-app
 
 TODO:
-add view from Kotlin
+update Figma prototypes
