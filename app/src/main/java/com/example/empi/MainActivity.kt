@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         toplayout=findViewById(R.id.toplayout)
         toplayout.setBackgroundColor(Color.parseColor("#ffffff"))
         var textview = TextView(this)
-        textview.text=resources.getText(R.string.greeting)
+        textview.text=resources.getText(R.string.login)
         //textview.setTextColor(Color.parseColor("#C1D8F0"))
         //toplayout.addView(textview)
     }
