@@ -3,9 +3,12 @@ package com.example.empi
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.ActionMode
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+
+const val TAG = "MainActivity"
 
 class MainActivity : ComponentActivity() {
 
@@ -15,7 +18,7 @@ class MainActivity : ComponentActivity() {
     // e.g., onCreate() initializes layout;
     override fun onCreate(savedInstanceState: Bundle?) {
         // d is for debug; i is for info; e is for error; v is for vebose
-        Log.d("MainActivity", "onCreate Called")
+        Log.d(TAG, "onCreate Called")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout)
         toplayout=findViewById(R.id.toplayout)
@@ -24,5 +27,10 @@ class MainActivity : ComponentActivity() {
         textview.text=resources.getText(R.string.login)
         //textview.setTextColor(Color.parseColor("#C1D8F0"))
         //toplayout.addView(textview)
+    }
+    override fun onStart() {
+        // now we can resume the app after clicking Home
+        super.onStart()
+        Log.d(TAG, "onStart Called")
     }
 }
